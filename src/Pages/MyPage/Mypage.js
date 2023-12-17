@@ -20,16 +20,7 @@ export default function Mypage() {
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }, backgroundColor: "#FFFDFD" }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '130px' }}>
-            <div
-              style={{
-                width: '150px',
-                height: '150px',
-                backgroundColor: '#DDDDDD',
-                borderRadius: '50%',
-                position: 'absolute',
-                marginTop: 90
-              }}
-            />
+            
             <Avatar
               alt="프로필 이미지"
               src={Logo}
@@ -51,7 +42,7 @@ export default function Mypage() {
                   sx={{ mt: 8 }}
                 />
               </Grid>
-              <Grid item xs={12} sm={4} align="center">
+              <Grid item xs={12} sm={4} sx={{mt : 4}}align="center">
                 블로그 소개글
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -60,18 +51,7 @@ export default function Mypage() {
                   id="outlined-basic" variant="outlined"
                   size="small"
                   fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={4} align="center">
-                이메일
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  hiddenLabel
-                  type='email'
-                  id="outlined-basic" variant="outlined"
-                  size="small"
-                  fullWidth
+                  sx={{mt: 4}}
                 />
               </Grid>
             </Grid>

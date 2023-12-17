@@ -11,31 +11,32 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Link as RouterLink } from 'react-router-dom';
+import instance from '../../shared/Request';
 
 const PostListLogin = ({ data }) => {
   const [sortBy, setSortBy] = useState(0);
   const [filteredData, setFilteredData] = useState([]);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // Check if userid is stored in local storage
+    // 로그인 상태 확인
     const userid = localStorage.getItem('userid');
-    setIsUserLoggedIn(!!userid); // Set true if userid exists, otherwise false
+    setIsUserLoggedIn(!!userid);
 
-    // 여기서 data를 바탕으로 필요한 필터링 작업을 수행합니다.
-    const fetchData = async () => {
-      // 필터링 작업에 따라 로직을 추가하세요.
-      setFilteredData(data);
+    // API 호출하여 게시물 데이터 가져오기
+    const fetchPosts = async () => {
+      try {
+        const response = await instance.get('/api/posts/list/all');
+        setPosts(response.data); // API 응답으로 받은 데이터를 상태에 저장
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        // 에러 처리
+      }
     };
 
-    fetchData();
-  }, [data]);
-
-  const handleChange = (event) => {
-    setSortBy(event.target.value);
-    // 여기에서 원하는 작업 수행
-    console.log('Selected sort option:', event.target.value);
-  };
+    fetchPosts();
+  }, []);
 
   return (
     <React.Fragment>
