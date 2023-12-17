@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Box, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import Logo from '../../Logo.png';
+import Logo from '../../Logo_TXT.png';
 
 const CustomAppBar = () => {
   // Check if the user is logged in
