@@ -1,9 +1,7 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../../Logo.png';
 import { Link as RouterLink } from 'react-router-dom';
@@ -27,10 +25,33 @@ export default function Myblog() {
   ];
 
   const followers = [
+    {
+      id: 1,
+      nickname: 'epnjh0807'
+    },
+    {
+      id: 2,
+      nickname: 'juhye'
+    },
+    {
+      id: 3,
+      nickname: 'micmicmong'
+    }
     
   ];
   const followingp = [
-    
+    {
+      id: 1,
+      nickname: 'epnjh0807'
+    },
+    {
+      id: 2,
+      nickname: 'juhye'
+    },
+    {
+      id: 3,
+      nickname: 'micmicmong'
+    }
   ];
   const followingb = [
     {
@@ -75,17 +96,7 @@ export default function Myblog() {
         <Grid container spacing={2}>
           <Grid item xs={12} md={3}>
             <Paper sx={{ maxWidth: 200, height: '550px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <div
-                style={{
-                  width: '110px',
-                  height: '110px',
-                  backgroundColor: '#DDDDDD',
-                  borderRadius: '50%',
-                  position: 'absolute',
-                  marginTop: 43,
-                  marginBottom: 3
-                }}
-              />
+              
               <Avatar
                 alt="프로필 이미지"
                 src={Logo}
@@ -246,12 +257,12 @@ export default function Myblog() {
                     <Grid container spacing={2}>
                       <Grid item>
                         <ButtonBase sx={{ width: 64, height: 64 }}>
-                          <img src={Logo} alt="이미지 설명" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <img src={"https://source.unsplash.com/random?wallpapers"} alt="이미지 설명" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </ButtonBase>
                       </Grid>
                       <Grid item xs={12} sm container direction="column" spacing={2}>
                         <Grid item xs>
-                          <Typography gutterBottom variant="subtitle1" component="div" style={{ display: 'flex', alignItems: 'flex-start', ml: 2 }}>
+                          <Typography gutterBottom variant="subtitle1" component="div" style={{ display: 'flex', alignItems: 'flex-start', fontWeight:'bold' }}>
                             {post.title}
                           </Typography>
                         </Grid>

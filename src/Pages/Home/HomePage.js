@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Logo from '../../Logo.png';
 import { Link as RouterLink } from 'react-router-dom';
 import { Paper } from '@mui/material';
 import BubbleChart from './BubbleChart';
